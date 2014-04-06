@@ -76,8 +76,10 @@ ifeq ($(DEVICE_RESOLUTION),)
 $(warning ********************************************************************************)
 $(warning * DEVICE_RESOLUTION is NOT SET in BoardConfig.mk )
 $(warning * Please see http://tinyw.in/nP7d for details    )
+$(warning * Setting DEVICE_RESOLUTION to 1080x1920         )
+$(warning * DO NOT FLASH THE PRODUCED RECOVERY IMAGE !!!   )
 $(warning ********************************************************************************)
-$(error stopping)
+DEVICE_RESOLUTION := 1080x1920
 endif
 
 ifeq "$(wildcard bootable/recovery/gui/devices/$(DEVICE_RESOLUTION))" ""
